@@ -9,6 +9,7 @@
           :src="artwork.image_path"
           :alt="artwork.title"
           class="w-full h-full object-cover"
+          loading="lazy"
         />
         <div
           v-else

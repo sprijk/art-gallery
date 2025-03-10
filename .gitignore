@@ -17,5 +17,4 @@ node_modules/
 .DS_Store
 
 # data
-/data/gallery.db
-/data/ingress/*
+/data
