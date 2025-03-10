@@ -5,16 +5,13 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "init-db": "node scripts/initDb.js"
+    "preview": "nuxt preview"
   },
   "dependencies": {
+    "@nuxt/image": "^1.9.0",
     "@pinia/nuxt": "^0.5.1",
     "nuxt": "^3.9.0",
-    "pinia": "^2.1.7",
-    "sharp": "^0.33.5",
-    "sqlite": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "pinia": "^2.1.7"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.10.0"

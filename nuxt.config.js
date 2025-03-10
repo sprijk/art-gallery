@@ -1,13 +1,13 @@
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "@pinia/nuxt", "@nuxt/image"],
 
   app: {
     head: {
-      title: "Art Gallery",
+      title: "Kunstgalerie",
       meta: [
         {
           name: "description",
-          content: "Browse our collection of beautiful artworks",
+          content: "Blader door onze collectie van prachtige kunstwerken",
         },
       ],
       link: [
@@ -24,11 +24,36 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: "2025-03-10",
 
-  hooks: {
-    "build:before": async () => {
-      const { execSync } = require("child_process");
-      console.log("Initializing database...");
-      execSync("npm run init-db");
+  image: {
+    provider: "cloudinary",
+    cloudinary: {
+      baseURL: "https://res.cloudinary.com/demo/image/upload/",
+    },
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
+    presets: {
+      artwork: {
+        modifiers: {
+          format: "webp",
+          fit: "cover",
+          quality: 80,
+        },
+      },
+      thumbnail: {
+        modifiers: {
+          format: "webp",
+          width: 400,
+          height: 300,
+          fit: "cover",
+          quality: 80,
+        },
+      },
     },
   },
 });

@@ -4,19 +4,21 @@
   >
     <NuxtLink :to="`/artwork/${artwork.id}`">
       <div class="h-64 bg-gray-200 overflow-hidden">
-        <img
-          v-if="artwork.image_path"
-          :src="artwork.image_path"
+        <NuxtImg
+          v-if="artwork.image_id"
+          :src="artwork.image_id"
+          preset="artwork"
           :alt="artwork.title"
           class="w-full h-full object-cover"
           loading="lazy"
         />
-        <div
+        <ArtworkPlaceholder
           v-else
-          class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center text-gray-400"
-        >
-          {{ artwork.title }}
-        </div>
+          :title="artwork.title"
+          :artist="artwork.artist"
+          :showArtist="true"
+          aspectRatio="4/3"
+        />
       </div>
     </NuxtLink>
     <div class="p-6">
