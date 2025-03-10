@@ -15,3 +15,7 @@ node_modules/
 
 # OS generated files
 .DS_Store
+
+# data
+/data/gallery.db
+/data/ingress/*
